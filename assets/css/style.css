@@ -1,0 +1,382 @@
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #1a2236;
+    --body-bg: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-muted: #6c757d;
+    --border-color: rgba(0, 0, 0, 0.125);
+    --table-header-bg: #f2f7ff;
+    --table-hover-bg: #f9fafc;
+    --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+    --primary-color: #375fd8;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffa000;
+    --danger-color: #dc3545;
+    --light-color: #2c3440;
+    --dark-color: #222b3c;
+    --body-bg: #1a2236;
+    --card-bg: #2c3440;
+    --text-color: #e9ecef;
+    --text-muted: #adb5bd;
+    --border-color: rgba(255, 255, 255, 0.075);
+    --table-header-bg: #222b3c;
+    --table-hover-bg: #2c3850;
+}
+
+body {
+    background-color: var(--body-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+::placeholder {
+    color: var(--text-color) !important;
+    opacity: 0.5 !important; /* Firefox */
+}
+  
+::-ms-input-placeholder { /* Edge 12 -18 */
+    color: var(--text-color) !important;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    color: var(--light-color);
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode-toggle i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    margin-bottom: 20px;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.navbar-dark {
+    background-color: var(--dark-color) !important;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    position: relative;
+}
+
+.navbar .nav-link:hover, 
+.navbar .nav-link.active {
+    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .dropdown-menu {
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--card-bg);
+}
+
+.navbar .dropdown-item {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.navbar .dropdown-item:hover {
+    background-color: var(--table-hover-bg);
+}
+
+/* Card styling */
+.card {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    background-color: var(--card-bg);
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card-header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Table styling */
+.table {
+    color: var(--text-color);
+}
+
+.table thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    background-color: var(--table-header-bg);
+}
+
+.table tbody tr:hover {
+    background-color: var(--table-hover-bg);
+}
+
+.table td, .table th {
+    border-color: var(--border-color);
+}
+
+/* Status badges */
+.badge-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.badge-available {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.badge-not-available {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Action buttons */
+.action-buttons .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.action-buttons .btn:last-child {
+    margin-right: 0;
+}
+
+.btn-use {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: #212529;
+}
+
+.btn-use:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    color: #212529;
+}
+
+.btn-add-qty {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.btn-add-qty:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: white;
+}
+
+.page-header {
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Modal customization */
+.modal-header {
+    border-radius: 0;
+    padding: 15px 20px;
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.modal-body {
+    background-color: var(--card-bg);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+.form-control, .form-select {
+    background-color: var(--body-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+.form-label {
+    color: var(--text-color);
+}
+
+/* DataTables customization */
+.dataTables_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dataTables_wrapper .dataTables_length {
+    flex: 1;
+    margin-bottom: 15px;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.dataTables_wrapper #inventoryTable_filter input {
+    width: 40vw;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    flex: 2;
+    margin-bottom: 15px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.custom-add-button-container {
+    flex: 1;
+    text-align: right;
+    margin-bottom: 15px;
+    min-width: 150px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    width: 100%;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+.dataTables_wrapper .dataTables_info {
+    padding-top: 15px;
+    color: var(--text-muted);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    color: var(--text-color) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--primary-color);
+    color: white !important;
+    border: 1px solid var(--primary-color);
+}
+
+.theme-transition {
+    transition: all var(--transition-speed) ease;
+}
+
+.dashboard-stat {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out, background-color var(--transition-speed) ease;
+}
+
+.dashboard-stat:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.dashboard-stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.dashboard-stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* responsiveness */
+@media (max-width: 767.98px) {
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .action-buttons .btn {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .action-buttons .btn:last-child {
+        margin-bottom: 0;
+    }
+    
+    .navbar-brand img {
+        max-height: 30px;
+    }
+} 
